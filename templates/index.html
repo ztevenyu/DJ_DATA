@@ -1,0 +1,86 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/basic.css' %}">
+
+    <title>厂家对接项目信息</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        #title{
+            width:100%;
+            height: 100px;
+            background-color: yellowgreen;
+            font-size:35px;
+            color:white;
+            line-height: 100px;
+            padding-left: 50px;
+            float:left
+        }
+        #title>div{
+            float:left;
+        }
+        #table{
+            width:1200px;
+            height: 1200px;
+            background-color:lightblue;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="title">
+        <div><img src="{% static "test.jpg" %}" height="100" width="100" ></div>
+        <div>厂家对接项目信息</div>
+    </div>
+    <div id="table">
+    <div id="div01">当前用户：{{ user }}</div>
+        <table border="1px" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>年度</th>
+                    <th>校名</th>
+                    <th>地区</th>
+                    <th>厂家</th>
+                    <th>客户类型</th>
+                    <th>Radius对接产品</th>
+                    <th>2166部署模式</th>
+                    <th>IPv6认证</th>
+                    <th>有线IPv4认证</th>
+                    <th>无线IPv4认证</th>
+                    <th>是否多运营商</th>
+                    <th>多运营商模式</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in allstudent %}
+                <tr>
+                    <td>{{ student.0 }}</td>
+                    <td>{{ student.1 }}</td>
+                    <td>{{ student.2 }}</td>
+                    <td>{{ student.3 }}</td>
+                    <td>{{ student.4 }}</td>
+                    <td>{{ student.5 }}</td>
+                    <td>{{ student.6 }}</td>
+                    <td>{{ student.7 }}</td>
+                    <td>{{ student.8 }}</td>
+                    <td>{{ student.9 }}</td>
+                    <td>{{ student.10 }}</td>
+                    <td>{{ student.11 }}</td>
+                    <td>{{ student.12 }}</td>
+                 </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
